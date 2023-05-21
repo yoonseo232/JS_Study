@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title>데이터타입(String,Number,Objext,Arry,Undeined,Null)</title>
+    </head>
+    <body>
+        <script>
+            //String - 문자열
+            let name1 = "홍길동";
+            let name2 = "홍길순";
+            //let str1 = "저의 이름은 "홍길동" 입니다";  //에러
+            str1 = "저의 이름은 '홍길동' 입니다";  // => 저의 이름은 '홍길동' 입니다
+            console.log(str1);
+            str1 = "저의 이름은 \"홍길동\" 입니다";   // => 저의 이름은 "홍길동" 입니다
+            console.log(str1);
+            str1 = "저의 이름은 \홍길동\ 입니다"; //정상적으로 실행되나 출력값은 없음  => 저의 이름은 홍길동 입니다
+            console.log(str1);
+            str1 = "저의 이름은 \\홍길동\\ 입니다";  // => 저의 이름은 \홍길동\ 입니다
+            console.log(str1);
+
+
+            //Number 
+            let x = 3;
+            let y = 3.14;
+
+
+            //Undefined
+            let u1; //초기값이 없음 
+            console.log(u1);  // => Undefined
+
+            let u2 = undefined;
+            console.log(u2);  // => Undefined
+
+
+            //Null
+            let n1 = null;
+            console.log(n1);  //=> null
+
+
+            //Object 선언 후 나중에 멤버변수 초기화
+            let person1 = {};  //객체 초기화
+            person1.firstName = "길동";  //멤버변수 초기화
+            person1.lastName = "홍";
+            person1.age = 23;
+
+            //Object 선언과 동시에 멤버변수 초기화
+            let person2 = {
+                firstName : "길수",
+                lastName : "홍",
+                age : 10
+            }
+
+            let person3 = {};
+            person3["firstName"] = "철수";
+            person3["lastName"] = "김";
+            person3["age"] = 10;
+
+            person2.email = "Hong@gmail.com";
+            console.log(person1.firstName);
+            console.log(person1.lastName);
+            console.log(person1.age);
+
+            document.write(person1.firstName + "<br>");
+            document.write(person1.lastName + "<br>");
+            document.write(person1.age + "<br>");
+
+
+            //Array - 배열
+            let car= ["현대", "기아", "볼보", "테슬라", "벤츠"];
+
+            for(var i = 0; i <= 4; i++){
+                console.log(car[i]);
+            }
+
+            let num = [3,7,2,9,12];
+            console.log(num[2]);
+            console.log(num[5]);
+            console.log(num[4]);
+
+            let arr1 = ["현대", 3, undefined, null]  //가능!
+            for(var i = 0; i <= arr1.length; i++){
+                console.log(arr1[i]);
+            }
+
+            let arr2 = [person1, person2, person3];
+            console.log(arr2[0]);  // => {firstName: '길동', lastName: '홍', age: 23}
+            console.log(arr2[1]);
+            console.log(arr2[2]);
+            
+
+            let arr3 = []; //초기화 안 하는 것이 가능
+            arr3[0] = 1;
+            arr3[1] = "대한민국";
+            console.log(arr3[0]);
+            console.log(arr3[1]);
+
+            //배열의 push 메서드를 이용해서 순차적으로 삽입
+            let arr4 = [];
+            arr4.push(2023);
+            arr4.push(undefined);
+            console.log(arr4[0]);
+            console.log(arr4[1]);
+
+            //Boolean
+            let isAdult = false;
+            let num1 = 5;
+            let num2 = 7;
+
+            console.log(num1 > num2);
+            console.log(isAdult);
+
+            console.log(typeof num);  //변수의 type  => Object
+
+        </script>
+    </body>
+</html>

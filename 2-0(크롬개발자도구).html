@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>크롬 개발자 도구</title>
+    </head>
+    <body>
+        <script>
+            console.log("Hello World!");   //출력
+            console.info("Hello World!");  //정보
+            console.warn("Hello World!");  //경고
+            console.error("Hello World!"); //에러
+
+            var userList = [
+                {firstName: "재석", lastName: "유", emali: "yu@gmail.com"},
+                {firstName: "종국", lastName: "김", emali: "kim@gmail.com"},
+                {firstName: "세찬", lastName: "양", emali: "yang@gmail.com"},
+                {firstName: "석진", lastName: "지", emali: "ji@gmail.com"}
+            ];
+
+            console.log(userList);
+            console.table(userList);
+
+            console.time();
+                // for(let i = 1; i <= 100000; i++){
+                //     console.log("배신자의 최후는 죽음뿐이다.." + i);
+                // }
+            console.timeEnd();
+
+            function a(){
+                console.time();
+                //insert Code가 수행되는 시간 측정
+                console.timeEnd();
+            }
+
+            console.log("This is %cstyle Message", "color:yellow;background-color:blue;padding:4px");
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>반복문 for, for-in, for-of, while</title>
+    </head>
+    <body>
+        <script>
+            //for
+            for(var i = 0; i < 5; i++){
+                console.log("THIS NUMBER IS " + i)
+            }
+
+            var i = 1;
+            var len = 10;
+            var total = 0;
+            for(; i <10;){
+                total += i;
+                i++;
+            }
+            console.log(total);
+
+            //break, continue
+            for(var i = 0; i < 5; i++){
+                if(i == 3){
+                    break; //continue;
+                }
+                console.log("This Number Is " + i);
+            }
+
+            var numbers = [45, 23, 5, 7, 29, 19];
+            var len = numbers.length;
+
+            for(var i = 0; i < len; i++){
+                console.log(numbers[i]);
+            }
+
+            //향상된 for문
+            for(var i in numbers){  //numbers 배열의 index 값
+                console.log(i);
+            }
+
+            for(var i of numbers){  //numbers 배열의 원소의 값
+                console.log(i);
+            }
+
+            var person = {
+                firstName : "길동",
+                lastName : "홍",
+                age : 37
+            }
+            console.log(person.firstName);
+            console.log(person.lastName);
+            console.log(person.age);
+
+            for(var key in person){
+                //console.log(key);
+                console.log(person[key]);
+            }
+
+            var cars = ["현대", "기아", "볼보", "벤츠"];
+            for(var car in cars){
+                console.log(car);
+            }
+
+            for(var car of cars){
+                console.log(car);
+            }
+
+            //while문
+
+            var i = 1;
+            var total = 0;
+
+            while(i <= 10){
+                total = i;
+                i++;
+            }
+
+            console.log(total);
+
+            //do-while문
+
+            var i1 = 11;
+            var total1 = 0;
+
+            do{
+                total1 += i;
+                i++;
+            }while(i <= 10)
+
+            console.log(total1);
+
+            
+        </script>
+    </body>
+</html>

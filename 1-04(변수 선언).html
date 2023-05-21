@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>변수 선언(var, let, const)</title>
+    </head>
+    <body>
+        <script>
+            //var
+            var x1 = 5;
+            var y1 = 6
+            var z1 = x1 + y1;
+            console.log("x1 - "+ x1);
+            console.log("y1 - "+ y1);
+            console.log("z1 - "+ z1);
+             var x1 = 20;    //재선언이 가능
+            z1 = x1 + y1;
+            console.log("x1 - "+ x1);
+            console.log("y1 - "+ y1);
+            console.log("z1 - "+ z1);
+
+            //let
+            let x2 = 5;
+            let y2 = 6;
+            let z2 = x2 + y2;
+
+            let x2 = 23;  //같은 변수명으로 선언된 변수가 있을 시 에러를 띄움
+
+            //const
+            const PI = 3.14;
+            PI = 3.1415;  //실행시 에러 발생
+            const PI = 2.14;  //변수명 재선언 시 에러 발생
+
+            const z;  //초기값을 지정해야 함
+
+        </script>
+    </body>
+</html>

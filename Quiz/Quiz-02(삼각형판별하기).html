@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Quiz-02(삼각형판별하기)</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer;
+                var max = 0;
+                var sum = 0;
+
+                if(a > b){
+                    max = a;
+                    sum = b + c;
+                }else if(b > c){
+                    max = b;
+                    sum = a + c;
+                }else if(c > a){
+                    max = c;
+                    sum = a + b;
+                }
+
+                if((max - sum) <= 0 ){
+                    answer = "yes";
+                }else{
+                    answer = "no";
+                }
+                
+                return answer;
+            }
+
+            console.log(solution(6, 7, 11));
+            console.log(solution(13, 33, 17));
+        </script>
+    </body>
+</html>

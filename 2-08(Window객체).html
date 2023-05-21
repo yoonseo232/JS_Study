@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Window 내장객체</title>
+    </head>
+    <body>
+        <script>
+            console.log(window);
+            //alert("이것은 대화창 입니다.");
+            window.alert("이것은 대화창 입니다.");
+
+            // var yn = confirm("정말로 삭제하시겠습니까?");
+            // console.log(yn);
+
+            if(confirm("정말로 삭제하시겠습니까?")){
+                console.log("삭제 실행");
+            }
+
+            var txt = prompt("비밀번호를 입력하세요 : ");
+            console.log(txt); //취소 버튼 => Null | 아무것도 안누르고 확인 버튼 => ""
+
+            if(txt===null){
+                console.log("취소 선택");
+            }else if(txt===""){
+                console.log("확인 선택");
+            }else if(txt!==""){
+                console.log(txt);
+            }
+
+            window.open("https://www.naver.com");
+            window.print(); //현재 내용
+
+            //setTimeout 
+            setTimeout(function(){
+                console.log("빵댕이를씰룩쌜룩")
+            }, 3000);
+
+            //setInteval
+            var i = 0;
+            var fuc = setInterval(function(){
+                console.log("엉덩이를흔들어봐" + i);
+                if(i===3){
+                    clearInterval(fuc);
+                }
+                i++;
+            }, 3000);
+
+            
+        </script>
+    </body>
+</html>

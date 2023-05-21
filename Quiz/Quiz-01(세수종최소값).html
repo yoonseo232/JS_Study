@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Quiz-01(세수종 최소값)</title>
+    </head>
+    <body>
+        <script>
+            function solution(a, b, c){
+                let answer;
+
+                if(a < b){
+                    answer = a;
+                }else if(b < c){
+                    answer = b;
+                }else if(c < a){
+                    answer = c;
+                }
+
+                return answer;
+            }
+            
+            console.log(solution(6, 5, 11));
+        </script>
+    </body>
+</html>
