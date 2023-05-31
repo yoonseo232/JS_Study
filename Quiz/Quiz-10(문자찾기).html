@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            function solution(str, r){
+                let answer = 0;
+
+                //방법1 : for문을 이영
+                for(let x of str){
+                    if(x == r) answer++;
+                }   
+
+                //방법2 : 내장함수
+                //console.log(str.split(r));
+                answer = str.split(r).length;
+                return answer-1;
+                
+            }
+            let str = "COMUTERPROGRAMING";
+            console.log(solution(str, "R"));
+        </script>
+    </body>
+</html>

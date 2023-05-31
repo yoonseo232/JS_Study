@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>this키워드</title>
+    </head>
+    <body>
+        <button onclick="this.style.backgroundColor='red'">클릭1</button> <!--this = 엘리먼트-->
+        <button onclick="callFunc(this)">클릭2</button>
+        <select onchange="changeSelect(this)">
+            <option valuse="1">1</option>
+            <option valuse="2">2</option>
+            <option valuse="3">3</option>
+        </select>
+
+        <script>
+            function callFunc(obj2){
+                alert("callFunc() 함수 호출");
+                console.log(obj2); //=> <button onclick="cllFunc(this)">클릭2</button>
+                console.log(obj2.value);
+            }
+
+            console.log(this);
+            window.alert("엉덩이 빵댕이 씰룩씰룩");
+            this.alert("엉덩이 빵댕이 씰룩씰룩");
+
+            function myFunction(){
+                console.log(this); //=> Window
+            }
+            myFunction();
+        
+            var person = {
+                firstName : "길동",
+                lastName : "홍",
+                fullName : function(){
+                    return this.firstName + " " + this.lastName; //Object안에서의 window 객체는 Object를 가르킴
+                }
+            }
+            console.log(person.fullName());
+        </script>
+    </body>
+</html>
