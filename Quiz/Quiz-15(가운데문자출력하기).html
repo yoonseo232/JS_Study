@@ -4,17 +4,36 @@
     </head>
     <body>
         <script>
-            function solution(s){
-                let answer = "";
 
-                answer= str.charAt(parseInt(str.lenght / 2));
+            function solution(str){
+                let answer;
+
+                let mid = Math.floor(str.length/2);
+
+                //방법1
+                if(str.length % 2 == 1){
+                    answer = str.substring(mid, mid+1);
+                }else{
+                    answer = str.substring(mid-1, mid+1);
+                }
+                
+                //방법2
+                if(str.length % 2 == 1){
+                    answer = str.substr(mid, 1);
+                }else{
+                    answer = str.substr(mid-1, 2);
+                }
+                
+                
                 return answer;
             }
 
-            console.log(solution("study"));
-            console.log(solution("teacher"));
-            console.log(solution("good"));
-            console.log(solution("length"));
+            
+            console.log(solution("study")); //u
+            console.log(solution("teacher")); //c
+            console.log(solution("good")); //oo
+            console.log(solution("length")); //ng
+
         </script>
     </body>
 </html>
