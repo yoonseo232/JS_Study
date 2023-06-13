@@ -31,7 +31,17 @@
                 for(var x of args){
                     total += x;
                 }
+                console.log(total);
             }
+
+            function sum(...args){
+                var total = 0;
+                args.forEach(function(x, index){
+                    total += x;
+                });
+                console.log(total);
+            }
+
             sum(5, 7);
             sum(5, 7, 9);
             sum(5, 7, 9, 11);

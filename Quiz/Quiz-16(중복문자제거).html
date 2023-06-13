@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>중복 문자 제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer;
+
+                for(let i = 0; i < s.length; i++){
+                    if(i === s.indexof(s[i])){
+                        answer += s[i];
+                    }
+                }
+
+                return answer;
+            }
+            console.log(solution("ksekkset"));
+        </script>
+    </body>
+</html>
