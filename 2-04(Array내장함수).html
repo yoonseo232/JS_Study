@@ -58,7 +58,7 @@
             fruits5.splice(1, 1); //orange
             console.log(fruits5); //banana, apple
             
-            fruits5.splice(1, 0, "Lemon", "Kiwi"); 
+            fruits5.splice(1, 1, "Lemon", "Kiwi"); 
             console.log(fruits5);
 
             //concat() : 두 개의 배열을 하나로 만들어줌
@@ -80,7 +80,7 @@
             console.log(fruits7.sort());
             
             var points = [40, 100, 70, 21, 99];
-            console.log(points.sort()); //sort는 문자열로 변환해서 정렬 => [100, 21, 40, 70, 99]
+            console.log(points.sort()); //sort는 문자열로 변환해서 정렬 
 
             //오름차순
             points.sort(function(a, b){
@@ -96,17 +96,17 @@
             console.log(points);
 
             //내림차순
-            points.sort(function(a, b){
-               if(a>b) return -1;
-               else if(a<b) return 1;
-               else return 0; 
-            });
-            console.log(points);
+            // points.sort(function(a, b){
+            //    if(a>b) return -1;
+            //    else if(a<b) return 1;
+            //    else return 0; 
+            // });
+            // console.log(points);
 
-            points.sort(function(a,b){
-                return b - a;
-            })
-            console.log(points);
+            // points.sort(function(a,b){
+            //     return b - a;
+            // })
+            // console.log(points);
            
             //reverse() : 거꾸로
             console.log(points.reverse()); 
@@ -122,7 +122,7 @@
             persons.sort(function(a, b){
                 if(a.point > b.point){
                     return 1;
-                }else if(a.point > b.point){
+                }else if(a.point < b.point){
                     return -1;
                 }else{
                     return 0;
@@ -173,7 +173,7 @@
             var total2 = arr4.reduce(function(a,c){
                 return a + c;
             });
-            console.log(total);
+            console.log(total2);
 
             //map() : filter()와는 다른 형태로 새로운 배열을 생성
             var userList = [
