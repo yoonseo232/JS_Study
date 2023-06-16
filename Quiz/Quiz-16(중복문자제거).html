@@ -16,7 +16,11 @@
                 //특정 문자 갯수 출력
                 let answer = 0;
                 let pos = s.indexOf('k');
-                console.log(pos);
+                //console.log(pos);
+                while(pos !== -1){
+                    answer++;
+                    s.indexOf('k', pos+1);
+                }
 
                 return answer;
             }

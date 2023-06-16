@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>중복 단어 제거</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer;
+                // answer = s.filter(function(v , i){
+                //     // console.log(v, i, s.indexOf(v)); 
+                //     if(s.indexOf(v) === i){
+                //         return true;
+                //     } 
+                // });
+
+                //arrow function 사용
+                answer = s.filter((v , i) => s.indexOf(v) === i);
+
+                return answer;
+            }
+            let str = ["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
