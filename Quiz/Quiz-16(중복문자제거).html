@@ -5,13 +5,18 @@
     <body>
         <script>
             function solution(s){
-                let answer;
+                // let answer;
 
-                for(let i = 0; i < s.length; i++){
-                    if(i === s.indexof(s[i])){
-                        answer += s[i];
-                    }
-                }
+                // for(let i = 0; i < s.length; i++){
+                //     if(i === s.indexof(s[i])){
+                //         answer += s[i];
+                //     }
+                // }
+
+                //특정 문자 갯수 출력
+                let answer = 0;
+                let pos = s.indexOf('k');
+                console.log(pos);
 
                 return answer;
             }
