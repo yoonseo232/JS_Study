@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Class</title>
+    </head>
+    <body>
+        <script>
+            //클래스 : 객체를 생성하기 위한 틀, 설계도
+            class Car{
+                constructor(modelName, modelYear, type, price){ //기본 생성자
+                    this.modelName = modelName;
+                    this.modelYear = modelYear;
+                    this.type = type;
+                    this.price = price;
+                }
+
+                getModelName(){
+                    return this.modelName;
+                }
+
+                getModelYear(){
+                    return this.modelYear;
+                }
+            }    
+            
+            let car1 = new Car("아이오닉", "2021", "E", 4000);
+            console.log(car1.getModelName());
+            console.log(car1.getModelYear());
+
+        </script>
+    </body>
+</html>
