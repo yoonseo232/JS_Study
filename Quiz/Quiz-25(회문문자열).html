@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>회문문자열</title>
+    </head>
+    <body>
+        <script>
+            //앞에서 읽거나 뒤에서 읽을때 같은 문자열이면 Yes 아니면 No
+            function solution(str){
+                let answer = "YES";
+
+                // for(x of str){
+                //     x = x.toLowerCase();
+                //     for(let y = str.charAt(str.length-1); y > str; y--){
+                //         if(x != y){
+                //             answer = "NO";
+                //         }
+                //     }
+                // }
+
+                str = str.toLowerCase();
+                //방법1 : index를 이용한 직접 비교 방법
+                let len = str.length;
+                for(let i = 0; i < Math.floor(len/2); i++){
+                    if(str[i] !== str[len-i-1]){
+                        answer = "NO";
+                    }
+                }
+
+                //방법2 : reverse() 함수 사용
+                // str.split('').reverse.join(''); //배열로 바꾸기 -> 거꾸로하기 -> string으로 바꾸기
+                if(str !== str.split('').reverse.join('')){
+                    answer = "NO";
+                }
+
+                return answer;
+            }
+
+            // let str = "gooG";
+            let str = "Student";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>

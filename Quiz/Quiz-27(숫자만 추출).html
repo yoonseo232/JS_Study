@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>숫자만 추출</title>
+    </head>
+    <body>
+        <script>
+            //문자열에서 숫자만 추출해 출력
+            function solution(str){
+                let answer;
+
+                // str = str.replace(/[^0-9]/g,'');
+
+                for(x of str){
+                    if(parseInt(x) != NaN){
+                        answer += x;
+                    }
+                }
+
+                return answer;
+            }
+            let str = "g0en2T0s8eSoft";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
