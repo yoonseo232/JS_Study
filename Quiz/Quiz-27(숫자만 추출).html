@@ -6,17 +6,35 @@
         <script>
             //문자열에서 숫자만 추출해 출력
             function solution(str){
-                let answer;
+                // let answer ="";
+                let answer =0;
 
                 // str = str.replace(/[^0-9]/g,'');
 
-                for(x of str){
-                    if(parseInt(x) != NaN){
+                // for(x of str){
+                //     if(parseInt(x) != NaN){
+                //         answer += x;
+                //     }
+                // }
+
+                //방법 1 : parseInt()
+                for(let x of str){
+                    if(!isNaN(x)){
                         answer += x;
                     }
                 }
 
-                return answer;
+                //방법 2 : parseInt()X
+                for(let x of str){
+                    if(!isNaN(x)){
+                        answer = answer * 10 + Number(x);
+                    }
+                }
+
+                //방법 3 : 정규표현식 사용
+                console.log(Number(str.replace(/[^0-9]/g, '')));
+4
+                return parseInt(answer);
             }
             let str = "g0en2T0s8eSoft";
             console.log(solution(str));
