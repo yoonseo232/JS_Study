@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>자릿수의 합</title>
+    </head>
+    <body>
+        <script>
+            //n개의 자연수가 입력되면 각 자릿수의 합을 구하고 그 합이 최대인 자연수를 출력
+            function solution(n){
+                let answer = 0;
+                let max = Number.MIN_SAFE_INTEGER;
+
+                for(let x of arr){
+                    // //방법1 while문 사용
+                    // let sum = 0;
+                    // let temp = x;
+
+                    // while(temp){ //temp가 0이면 빠져나옴
+                    //     sum += temp % 10;
+                    //     temp = parseInt(temp / 10);  //Math.floor
+                    // }
+
+                    //방법2 내장함수 사용
+                    let sum = x.toString().split('').reduce((a,b) => a + Number(b), 0);
+
+                    if(sum > max){
+                        max = sum;
+                        answer = x;
+                    }else if(sum === max){
+                        if(x > answer){
+                            max = x;
+                        }
+                    }
+                }
+
+                return answer;
+            }
+            let num = [7, 460, 128, 603, 40, 521, 137, 123, 1200];
+            console.log(solution(num));
+        </script>
+    </body>
+</html>
