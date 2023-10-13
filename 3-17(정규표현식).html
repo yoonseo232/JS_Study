@@ -62,6 +62,26 @@
             var str11 = "1, 100 or 1000";
             var patt9 = /10?/g;
             console.log(str11.match(patt9));
+
+
+            //우편번호 : 5자리
+            //12345 : 5자리 다 숫자
+            // var patt10 = /\d{5}/; //5자리 연속되는 숫자가 나오면 true -> 123456도 true
+            // var postalCode = "12345";
+            // console.log(patt10.test(postalCode));  //()와 같으면 true 아니면 false
+
+            var patt11 = /^\d{5}$/;  //^ 다음에는 무조건 \d로 시작해라 -> 문자로 시작하면 false   | $ -> 끝내라  -> 5자리를 넘으면 false
+            var postalCode = "12345";
+            console.log(patt11.test(postalCode));
+
+            //핸드폰 번호 : 010-1234-5678
+            var patt12 = /^(010)-\d{4}-\d{4}$/;
+            var tel = "010-1234-5678";
+            console.log(patt12.test(tel));
+
+            //이메일 주소 : ~~~@gmail.com
+            var patt13 = /^\w+([\.-]?\w+)*@\w+(\.\w{2,3})+$/;
+            console.log(patt13.test("yoonseo@gmail.com"));
         </script>
     </body>
 </html>
