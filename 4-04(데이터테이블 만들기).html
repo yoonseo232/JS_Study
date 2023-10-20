@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>데이터 테이블 만들기</title>
+    </head>
+    <body>
+        <input type="text" id="searchTxt" onkeydown="checkEnter(event)">
+        <input type="button" value="조회" onclick="doSearch()">
+
+        <table id="tb" border="1">
+            <thead>
+                <tr>
+                    <th onclick="doSort('name')">Name</th>
+                    <th onclick="doSort('email')">Email</th>
+                    <th onclick="doSort('company')">Company</th>
+                    <th onclick="doSort('address')">Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+
+        <script src="/scripts/4-04.user_data.js"></script>
+        <script>
+            var currentData = [];
+            // console.log(userList);
+
+            function doSort(key){
+                currentData.sort(function(a,b){
+                    return a[key] > b[key] ? 1 : a[key] < b[key] ? -1 : 0;
+                });
+                renderTable(currentData);
+            }
+
+            function doSearch(){
+                var search_txt = document.getElementById("searchTxt").value;
+                // console.log(search_txt);
+
+                if(search_txt===""){ //전체 data 다 출력
+                    currentData = userList;
+                    renderTable(userList); //renderTable() txt -> <tr><td></td></tr>
+                    
+
+                }else{  //특정 키워드가 포함된 data 출력
+                    // /pattern/gi
+                    var regExp = new RegExp(search_txt, "i");
+                    var data = userList.filter(item => {
+                        if(regExp.test(item.name)){
+                            return true;
+                        }else if(regExp.test(item.email)){
+                            return true;
+                        }else if(regExp.test(item.company)){
+                            return true;
+                        }else if(regExp.test(item.address)){
+                            return true;
+                        }
+                    });
+                    // console.log(data);
+                    currentData = data;
+                    renderTable(data);
+                }
+
+
+            }
+            
+            function renderTable(data){ //text -> table 변환
+                var h = [];
+                data.forEach(itme => {
+                    h.push(`<tr>`);
+                    h.push(`<td>${itme.name}</td>`);
+                    h.push(`<td>${itme.email}</td>`);
+                    h.push(`<td>${itme.company}</td>`);
+                    h.push(`<td>${itme.address}</td>`);
+                    h.push(`</tr>`);
+                });
+
+                console.log(h.join(''));
+                document.querySelector("#tb>tbody").innerHTML = h.join('');
+            }
+
+            function checkEnter(event){
+                if(event.keyCode == 13){
+                    doSearch();
+                }      
+            }
+
+        </script>
+    </body>
+</html>

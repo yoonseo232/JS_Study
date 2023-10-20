@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>HTML 스타일 컨트롤</title>
+        <style>
+            .border-red{
+                border: 2px dashed red;
+            }
+
+            .border-green{
+                border: 2px solid green;
+            }
+
+            .border-default{
+                border: 2px solid blue;
+            }
+        </style>
+    </head>
+    <body>
+        Text:
+        <br>
+        <input type="text" id="text1" onblur="changeBorder()">
+        <br>
+        Radio(이메일 수신)
+        <input type="radio" name="radio_email_yn" value="Y" onclick="showEmail()">동의
+        <input type="radio" name="radio_email_yn" value="N" checked  onclick="hideEmail()">거부
+        <div id="divEmail">이메일<input type="text" id="email"></div>
+        Selelct : 
+        <br>
+        <select id="select1" onchange="doChange(this)">
+            <option value=""></option>
+            <option value="KO">Korea</option>
+            <option value="JP">Japan</option>
+            <option value="CH">China</option>
+        </select>
+
+        <select id="select2" style="display: none;" >
+            <option value="">서울</option>
+            <option value="">대전</option>
+            <option value="">대구</option>
+            <option value="">부산</option>
+        </select>
+
+        <select id="select3" style="display: none;">
+            <option value="">북경</option>
+            <option value="">차이나타운</option>
+            <option value="">상하이</option>
+        </select>
+
+        <select id="select4" style="display: none;">
+            <option value="">도쿄</option>
+            <option value="">교토</option>
+            <option value="">규슈</option>
+        </select>
+
+        <input type="button" value="저장" onclick="doSave(this)">
+        <script>
+            function doChange(obj){
+                if(obj.value == "KO"){
+                    document.getElementById("selcet2").style.display="";
+                }else{
+                    document.getElementById("selcet2").style.display="none";
+                }
+
+                if(obj.value == "CH"){
+                    document.getElementById("selce3").style.display="";
+                }else{
+                    document.getElementById("selcet3").style.display="none";
+                }
+
+                if(obj.value == "JP"){
+                    document.getElementById("selce4").style.display="";
+                }else{
+                    document.getElementById("selcet4").style.display="none";
+                }
+
+            }
+
+            function showEmail(){
+                document.getElementById("divEmail").style.display = "";
+            }
+
+            function hideEmail(){
+                document.getElementById("divEmail").style.display = "none";
+            }
+            function doSave(){
+                var txt1 = document.getElementById("text1");
+                console.log(txt1.value);
+                if(txt1.value === ""){
+                    txt1.className = "border-red";
+                    return alert("필수 값을 입력하세요");
+                }
+            }
+
+            function changeBorder(){
+                // console.log("onblur 이벤트 발생");
+                var txt1 = document.getElementById("text1");
+                // console.log(txt1.value);
+                if(txt1.value === "green"){
+                    txt1.className = "border-green";
+                }else if(txt1.value === "red"){
+                    txt1.className = "border-red";
+                }else{
+                    txt1.className = "border-default";
+                }
+            }
+        </script>
+    </body>
+</html>
